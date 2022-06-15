@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import Head from "next/head";
 import NextLink from 'next/link';
 import Cookies from 'js-cookie';
-import { AppBar, Container, Toolbar, Typography, Link, createMuiTheme, ThemeProvider, CssBaseline, Switch } from '@material-ui/core';
-
+import { AppBar, Container, Toolbar, Typography, Link, ThemeProvider, CssBaseline, Switch } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles';
 // utils
 import { Store } from '../utils/Store'
 
@@ -14,7 +14,7 @@ import useStyles from '../utils/style';
 export default function ({ title, description, children }) {
     const { state, dispatch } = useContext(Store);
     const { darkMode } = state;
-    const theme = createMuiTheme({
+    const theme = createTheme({
         typography: {
             h1: {
                 fontSize: '1.6rem',
